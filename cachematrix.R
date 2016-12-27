@@ -12,14 +12,14 @@
 
 makeCacheMatrix <- function(x = matrix()) {
   nVerse <- NULL ## Create a 'null' variable to represent the matrix inverse.
-  set <- function(y){ ##changes the vector stored in the parent function.
-    x <<- y 
-    nVerse <<- NULL 
-  }
+##  set <- function(y){ ##changes the vector stored in the parent function.
+##    x <<- y 
+##    nVerse <<- NULL 
+##  }
   get <- function() x ## returns vector stored in the parent function.
   setInverse <- function(solve) nVerse <<- solve ## stores the value of the input as variable "nVerse"
   getInverse <- function() nVerse## returns the value stored by 'setInverse'
-  list(set = set, get = get, ## return "special 'matrix'" as a list of functions.
+  list(get = get, ## return "special 'matrix'" as a list of functions.
        setInverse = setInverse,
        getInverse = getInverse)
 }
